@@ -21,6 +21,7 @@ versions=(
     1.38.0
     1.39.0
     1.40.0
+    1.41.0
 )
 
 for v in "${versions[@]}"; do

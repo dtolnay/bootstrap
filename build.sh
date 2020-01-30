@@ -24,3 +24,4 @@ cd /build/rustc-1.37.0 && ./x.py build
 cd /build/rustc-1.38.0 && ./x.py build
 cd /build/rustc-1.39.0 && ./x.py build
 cd /build/rustc-1.40.0 && ./x.py build
+cd /build/rustc-1.41.0 && ./x.py build
