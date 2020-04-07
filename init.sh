@@ -27,6 +27,7 @@ echo "Extracting mrustc-${mrustc_version}"
 tar xzf mrustc-${mrustc_version}.tar.gz
 for v in ${mrustc_rustc_version} "${rustc_versions[@]}" ; do
     echo "Extracting rustc-$v"
+    mkdir -p rustc-$v
     tar xzf rustc-$v-src.tar.gz -C rustc-$v --strip-components 1
 done
 
