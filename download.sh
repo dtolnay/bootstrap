@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-. config.sh
+. versions.sh
 
 cd -- "$(dirname -- "${BASH_SOURCE[0]}")"
 mkdir -p sources

@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-. config.sh
+. versions.sh
 
 cd -- "$(dirname -- "${BASH_SOURCE[0]}")"
 
@@ -21,7 +21,7 @@ deps=(
 )
 
 mkdir root
-rsync -avP sources/ configs/ build.sh config.sh root/build
+rsync -avP sources/ configs/ build.sh versions.sh root/build
 
 cd root/build
 echo "Extracting mrustc-${mrustc_version}"
