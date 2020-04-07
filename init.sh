@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+. config.sh
+
 cd -- "$(dirname -- "${BASH_SOURCE[0]}")"
 
 deps=(
@@ -19,7 +21,16 @@ deps=(
 )
 
 mkdir root
-rsync -a sources/ configs/ build.sh root/build
+rsync -avP sources/ configs/ build.sh config.sh root/build
+
+cd root/build
+echo "Extracting mrustc-${mrustc_version}"
+tar xzf mrustc-${mrustc_version}.tar.gz
+for v in ${mrustc_rustc_version} "${rustc_versions[@]}" ; do
+    echo "Extracting rustc-$v"
+    tar xzf rustc-$v-src.tar.gz -C rustc-$v --strip-components 1
+done
+
 sudo chown root:root ./root
 sudo debootstrap --include=$(IFS=,; echo "${deps[*]}") stable ./root
 
