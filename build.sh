@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-. versions.sh
+source /build/versions.sh
 
 cd /build/rustc-${mrustc_rustc_version}
 echo "Patching rustc-${mrustc_rustc_version}"

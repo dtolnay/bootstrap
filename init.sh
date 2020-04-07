@@ -2,9 +2,8 @@
 
 set -euo pipefail
 
-. versions.sh
-
 cd -- "$(dirname -- "${BASH_SOURCE[0]}")"
+source versions.sh
 
 deps=(
     cmake
