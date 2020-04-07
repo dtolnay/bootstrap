@@ -23,10 +23,10 @@ mkdir root
 rsync -avP sources/ configs/ build.sh versions.sh root/build
 
 pushd root/build
-echo "Extracting mrustc-${mrustc_version}"
+echo "Extracting mrustc ${mrustc_version}"
 tar xzf "mrustc-${mrustc_version}.tar.gz"
 for v in "${rustc_versions[@]}"; do
-    echo "Extracting rustc-$v"
+    echo "Extracting rustc $v"
     mkdir -p "rustc-$v"
     tar xzf "rustc-$v-src.tar.gz" -C "rustc-$v" --strip-components 1
 done
