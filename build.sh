@@ -2,26 +2,27 @@
 
 set -euo pipefail
 
-cd /build/rustc-1.29.2
-patch -p0 <../mrustc-0.9/rustc-1.29.0-src.patch
+. config.sh
 
-cd /build/mrustc-0.9
+cd /build/rustc-${mrustc_rustc_version}
+echo "Patching rustc-${mrustc_rustc_version}"
+patch -p0 <../mrustc-${mrustc_version}/rustc-1.29.0-src.patch
+
+cd /build/mrustc-${mrustc_version}
 export LIBSSH2_SYS_USE_PKG_CONFIG=true
+export MINICARGO_FLAGS="-j$(nproc)"
+echo "Building mrustc-${mrustc_version}"
 make -j$(nproc) -f minicargo.mk bin/mrustc
-make -j$(nproc) -f minicargo.mk RUSTCSRC=../rustc-1.29.2/ output/rustc output/cargo
-cd /build/mrustc-0.9/run_rustc
-make -j$(nproc) RUST_SRC=../../rustc-1.29.2/src/
+echo "Building rustc-${mrustc_rustc_version}"
+make -j$(nproc) -f minicargo.mk RUSTCSRC=../rustc-${mrustc_rustc_version}/ output/rustc
+make -j$(nproc) -f minicargo.mk RUSTCSRC=../rustc-${mrustc_rustc_version}/ output/cargo
+cd /build/mrustc-${mrustc_version}/run_rustc
+make -j$(nproc) RUST_SRC=../../rustc-${mrustc_rustc_version}/src/
 
 export CARGO_HOME=/build/.cargo
-cd /build/rustc-1.30.0 && ./x.py build
-cd /build/rustc-1.31.1 && ./x.py build
-cd /build/rustc-1.32.0 && ./x.py build
-cd /build/rustc-1.33.0 && ./x.py build
-cd /build/rustc-1.34.2 && ./x.py build
-cd /build/rustc-1.35.0 && ./x.py build
-cd /build/rustc-1.36.0 && ./x.py build
-cd /build/rustc-1.37.0 && ./x.py build
-cd /build/rustc-1.38.0 && ./x.py build
-cd /build/rustc-1.39.0 && ./x.py build
-cd /build/rustc-1.40.0 && ./x.py build
-cd /build/rustc-1.41.0 && ./x.py build
+unset SUDO_USER
+for v in ${rustc_versions[@]} ; do
+    cd /build/rustc-$v
+    echo "Building rustc-$v"
+    ./x.py build
+done
