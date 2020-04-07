@@ -22,7 +22,7 @@ deps=(
 mkdir root
 rsync -avP sources/ configs/ build.sh versions.sh root/build
 
-cd root/build
+pushd root/build
 echo "Extracting mrustc-${mrustc_version}"
 tar xzf "mrustc-${mrustc_version}.tar.gz"
 for v in "${mrustc_rustc_version}" "${rustc_versions[@]}"; do
@@ -30,6 +30,7 @@ for v in "${mrustc_rustc_version}" "${rustc_versions[@]}"; do
     mkdir -p "rustc-$v"
     tar xzf "rustc-$v-src.tar.gz" -C "rustc-$v" --strip-components 1
 done
+popd
 
 sudo chown root:root ./root
 sudo debootstrap --include=$(IFS=,; echo "${deps[*]}") stable ./root
