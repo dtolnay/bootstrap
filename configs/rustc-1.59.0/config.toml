@@ -1,6 +1,6 @@
 [build]
-cargo = "/build/rustc-1.58.0/build/x86_64-unknown-linux-gnu/stage2-tools-bin/cargo"
-rustc = "/build/rustc-1.58.0/build/x86_64-unknown-linux-gnu/stage2/bin/rustc"
+cargo = "/build/rustc-1.58.1/build/x86_64-unknown-linux-gnu/stage2-tools-bin/cargo"
+rustc = "/build/rustc-1.58.1/build/x86_64-unknown-linux-gnu/stage2/bin/rustc"
 docs = false
 vendor = true
 extended = true
