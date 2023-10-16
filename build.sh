@@ -23,5 +23,5 @@ unset SUDO_USER
 for v in "${rustc_versions[@]:1}"; do
     cd "/build/rustc-$v"
     echo "Building rustc $v"
-    ./x.py build
+    python3 x.py build
 done
