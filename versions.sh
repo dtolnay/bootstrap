@@ -1,6 +1,6 @@
-mrustc_version=0.9
+mrustc_version=0.10.1
 rustc_versions=(
-    1.29.2
+    1.29.0
     1.30.1
     1.31.1
     1.32.0
