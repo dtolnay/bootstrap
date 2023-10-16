@@ -1,6 +1,6 @@
 [build]
-cargo = "/build/mrustc-0.10.1/run_rustc/output/prefix/bin/cargo"
-rustc = "/build/mrustc-0.10.1/run_rustc/output/prefix/bin/rustc"
+cargo = "/build/mrustc-0.10.1/run_rustc/output-1.39.0/prefix/bin/cargo"
+rustc = "/build/mrustc-0.10.1/run_rustc/output-1.39.0/prefix/bin/rustc"
 docs = false
 vendor = true
 extended = true
