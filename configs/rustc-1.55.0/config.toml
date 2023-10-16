@@ -1,8 +1,8 @@
 changelog-seen = 2
 
 [build]
-cargo = "/build/rustc-1.54.0/build/x86_64-unknown-linux-gnu/stage2-tools-bin/cargo"
-rustc = "/build/rustc-1.54.0/build/x86_64-unknown-linux-gnu/stage2/bin/rustc"
+cargo = "/build/mrustc-0.10.1/run_rustc/output-1.54.0/prefix/bin/cargo"
+rustc = "/build/mrustc-0.10.1/run_rustc/output-1.54.0/prefix/bin/rustc"
 docs = false
 vendor = true
 extended = true
