@@ -33,7 +33,7 @@ done
 popd
 
 sudo chown root:root ./root
-sudo debootstrap --include=$(IFS=,; echo "${deps[*]}") stable ./root
+sudo debootstrap --include=$(IFS=,; echo "${deps[*]}") bullseye ./root
 
 echo 'To enter the chroot:'
 echo '$ firejail --chroot=./root --net=none --private-cwd=/build'
