@@ -12,8 +12,8 @@ echo "Building mrustc ${mrustc_version}"
 make -j$(nproc) -f minicargo.mk bin/mrustc
 echo "Building rustc ${rustc_versions[0]}"
 make -j$(nproc) -f minicargo.mk RUSTCSRC
-make -j$(nproc) -f minicargo.mk "output-${rustc_version[0]}/rustc"
-make -j$(nproc) -f minicargo.mk "output-${rustc_version[0]}/cargo"
+make -j$(nproc) -f minicargo.mk "output-${rustc_versions[0]}/rustc"
+make -j$(nproc) -f minicargo.mk "output-${rustc_versions[0]}/cargo"
 cd "/build/mrustc-${mrustc_version}/run_rustc"
 make -j$(nproc)
 
