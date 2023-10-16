@@ -1,3 +1,5 @@
+changelog-seen = 2
+
 [build]
 cargo = "/build/rustc-1.53.0/build/x86_64-unknown-linux-gnu/stage2-tools-bin/cargo"
 rustc = "/build/rustc-1.53.0/build/x86_64-unknown-linux-gnu/stage2/bin/rustc"
