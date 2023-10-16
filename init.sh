@@ -14,6 +14,7 @@ deps=(
     make
     patch
     pkg-config
+    python-is-python3
     python3
     time
     zlib1g-dev
