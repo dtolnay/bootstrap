@@ -35,7 +35,7 @@ popd
 
 sudo chown root:root ./root
 sudo chmod u+w,g-w,o-w ./root
-sudo debootstrap --include=$(IFS=,; echo "${deps[*]}") bullseye ./root
+sudo debootstrap --include=$(IFS=,; echo "${deps[*]}") bookworm ./root
 
 echo 'To enter the chroot:'
 echo '$ firejail --chroot=./root --net=none --private-cwd=/build'
