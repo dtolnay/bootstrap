@@ -34,6 +34,7 @@ done
 popd
 
 sudo chown root:root ./root
+sudo chmod u+w,g-w,o-w ./root
 sudo debootstrap --include=$(IFS=,; echo "${deps[*]}") bullseye ./root
 
 echo 'To enter the chroot:'
