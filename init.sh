@@ -9,6 +9,7 @@ deps=(
     cmake
     g++
     libcurl4-openssl-dev
+    libfindbin-libs-perl
     libssh2-1-dev
     libssl-dev
     make
