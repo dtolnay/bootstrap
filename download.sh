@@ -9,7 +9,7 @@ cd sources
 
 echo "Downloading mrustc ${mrustc_version}"
 curl \
-    -L "https://github.com/thepowersgang/mrustc/archive/v${mrustc_version}.tar.gz" \
+    -L "https://github.com/thepowersgang/mrustc/archive/${mrustc_commit_override:-v${mrustc_version}}.tar.gz" \
     -o "mrustc-${mrustc_version}.tar.gz"
 
 for v in "${rustc_versions[@]}"; do
