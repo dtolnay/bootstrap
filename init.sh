@@ -26,12 +26,12 @@ rsync -avP sources/ configs/ build.sh versions.sh root/build
 pushd root/build
 echo "Extracting mrustc ${mrustc_version}"
 mkdir -p "mrustc-${mrustc_version}"
-tar xzf "mrustc-${mrustc_version}.tar.gz" -C "mrustc-${mrustc_version}" --strip-components 1
+tar xzf "mrustc-${mrustc_version}.tar.gz" -C "mrustc-${mrustc_version}" --strip-components=1
 ln -s "../rustc-${rustc_versions[0]}-src.tar.gz" "mrustc-${mrustc_version}"
 for v in "${rustc_versions[@]:1}"; do
     echo "Extracting rustc $v"
     mkdir -p "rustc-$v"
-    tar xzf "rustc-$v-src.tar.gz" -C "rustc-$v" --strip-components 1
+    tar xzf "rustc-$v-src.tar.gz" -C "rustc-$v" --strip-components=1
 done
 popd
 
