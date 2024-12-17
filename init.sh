@@ -13,6 +13,7 @@ deps=(
     libssh2-1-dev
     libssl-dev
     make
+    ninja-build
     patch
     pkg-config
     python3
