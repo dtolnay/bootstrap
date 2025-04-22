@@ -19,7 +19,7 @@ lock down accidental network accesses during the build.
 ## Motivation
 
 The hope is that once the reproducibility of the Rust compiler is in better
-shape ([rust-lang/rust#34902]) we can get this bootstrap chain to converge with
+shape ([rust-lang/rust#129080]) we can get this bootstrap chain to converge with
 the chain that underlies the official rustc releases. At that point we would
 have a way to verify no funny business in the official binary releases by
 comparing hashes against another chain.
@@ -66,4 +66,4 @@ Commons Attribution-ShareAlike 4.0 International License](LICENSE-CC-BY-SA).
 [mrustc]: https://github.com/thepowersgang/mrustc
 [firejail]: https://github.com/netblue30/firejail
 [debootstrap]: https://wiki.debian.org/Debootstrap
-[rust-lang/rust#34902]: https://github.com/rust-lang/rust/issues/34902
+[rust-lang/rust#129080]: https://github.com/rust-lang/rust/issues/129080
