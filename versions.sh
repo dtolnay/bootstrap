@@ -1,21 +1,5 @@
 mrustc_version=0.11.0
 mrustc_commit_override=994ddf817a554c48ae03840c8aaf82fb99ab5d27
-rustc_versions=(
-    1.74.0
-    1.75.0
-    1.76.0
-    1.77.2
-    1.78.0
-    1.79.0
-    1.80.1
-    1.81.0
-    1.82.0
-    1.83.0
-    1.84.1
-    1.85.1
-    1.86.0
-    1.87.0
-)
 declare -A rustc_checksum
 rustc_checksum[1.74.0]=882b584bc321c5dcfe77cdaa69f277906b936255ef7808fcd5c7492925cf1049
 rustc_checksum[1.75.0]=5b739f45bc9d341e2d1c570d65d2375591e22c2d23ef5b8a37711a0386abc088
@@ -31,3 +15,4 @@ rustc_checksum[1.84.1]=5e2fb5d49628a549f7671b2ccf9855ab379fd442831a7c2af16e0cdcc
 rustc_checksum[1.85.1]=0f2995ca083598757a8d9a293939e569b035799e070f419a686b0996fb94238a
 rustc_checksum[1.86.0]=022a27286df67900a044d227d9db69d4732ec3d833e4ffc259c4425ed71eed80
 rustc_checksum[1.87.0]=149bb9fd29be592da4e87900fc68f0629a37bf6850b46339dd44434c04fd8e76
+rustc_versions=($(printf "%s\n" "${!rustc_checksum[@]}" | sort -V))
