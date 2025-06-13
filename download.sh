@@ -8,9 +8,11 @@ mkdir -p sources
 cd sources
 
 echo "Downloading mrustc ${mrustc_version}"
-curl \
-    -L "https://github.com/thepowersgang/mrustc/archive/${mrustc_commit_override:-v${mrustc_version}}.tar.gz" \
-    -o "mrustc-${mrustc_version}.tar.gz"
+if [[ ! -e "mrustc-${mrustc_version}.tar.gz" ]]; then
+    curl \
+        -L "https://github.com/thepowersgang/mrustc/archive/${mrustc_commit_override:-v${mrustc_version}}.tar.gz" \
+        -o "mrustc-${mrustc_version}.tar.gz"
+fi
 
 for v in "${rustc_versions[@]}"; do
     echo "Downloading rustc $v"
