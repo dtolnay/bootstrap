@@ -18,19 +18,19 @@ for v in "${rustc_versions[@]}"; do
     echo "Downloading rustc $v"
 
     source_path="rustc-$v-src.tar.gz"
-    hash_path="rustc-$v-src.tar.gz.sha256"
+    checksum_path="rustc-$v-src.tar.gz.sha256"
 
-    if [[ ! -e "${hash_path}" ]]; then
+    if [[ ! -e "${checksum_path}" ]]; then
         curl \
-            -L "https://static.rust-lang.org/dist/${hash_path}" \
-            -o "${hash_path}"
+            -L "https://static.rust-lang.org/dist/${checksum_path}" \
+            -o "${checksum_path}"
     fi
 
-    expected_hash="${rust_version_hashes[$v]}  ${source_path}"
-    remote_expected_hash=$(cat rustc-$v-src.tar.gz.sha256)
+    expected_checksum="${rustc_checksum[$v]}  ${source_path}"
+    remote_expected_checksum=$(cat rustc-$v-src.tar.gz.sha256)
 
-    if [[ "${expected_hash}" != "${remote_expected_hash}" ]]; then
-        echo 1>&2 "expected hash to be ${expected_hash}, got ${remote_expected_hash}"
+    if [[ "${expected_checksum}" != "${remote_expected_checksum}" ]]; then
+        echo 1>&2 "expected sha256 to be ${expected_checksum}, got ${remote_expected_checksum}"
         exit 1
     fi
 
@@ -40,5 +40,5 @@ for v in "${rustc_versions[@]}"; do
             -o "${source_path}"
     fi
 
-    sha256sum --check "$hash_path"
+    sha256sum --check "$checksum_path"
 done
