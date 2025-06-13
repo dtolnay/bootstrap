@@ -14,7 +14,29 @@ curl \
 
 for v in "${rustc_versions[@]}"; do
     echo "Downloading rustc $v"
-    curl \
-        -L "https://static.rust-lang.org/dist/rustc-$v-src.tar.gz" \
-        -o "rustc-$v-src.tar.gz"
+
+    source_path="rustc-$v-src.tar.gz"
+    hash_path="rustc-$v-src.tar.gz.sha256"
+
+    if [[ ! -e "${hash_path}" ]]; then
+        curl \
+            -L "https://static.rust-lang.org/dist/${hash_path}" \
+            -o "${hash_path}"
+    fi
+
+    expected_hash="${rust_version_hashes[$v]}"
+    remote_expected_hash=$(cat rustc-$v-src.tar.gz.sha256)
+
+    if [[ "${expected_hash}" != "${remote_expected_hash}" ]]; then
+        echo 1>&2 "expected hash to be ${expected_hash}, got ${remote_expected_hash}"
+        exit 1
+    fi
+
+    if [[ ! -e "${source_path}" ]]; then
+        curl \
+            -L "https://static.rust-lang.org/dist/${source_path}" \
+            -o "${source_path}"
+    fi
+
+    sha256sum --check "$hash_path"
 done
