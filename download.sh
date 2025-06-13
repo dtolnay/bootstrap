@@ -26,7 +26,7 @@ for v in "${rustc_versions[@]}"; do
             -o "${hash_path}"
     fi
 
-    expected_hash="${rust_version_hashes[$v]}"
+    expected_hash="${rust_version_hashes[$v]}  ${source_path}"
     remote_expected_hash=$(cat rustc-$v-src.tar.gz.sha256)
 
     if [[ "${expected_hash}" != "${remote_expected_hash}" ]]; then
