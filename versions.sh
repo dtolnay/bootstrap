@@ -15,4 +15,5 @@ rustc_checksum[1.84.1]=5e2fb5d49628a549f7671b2ccf9855ab379fd442831a7c2af16e0cdcc
 rustc_checksum[1.85.1]=0f2995ca083598757a8d9a293939e569b035799e070f419a686b0996fb94238a
 rustc_checksum[1.86.0]=022a27286df67900a044d227d9db69d4732ec3d833e4ffc259c4425ed71eed80
 rustc_checksum[1.87.0]=149bb9fd29be592da4e87900fc68f0629a37bf6850b46339dd44434c04fd8e76
+rustc_checksum[1.88.0]=3a97544434848ae3d193d1d6bc83d6f24cb85c261ad95f955fde47ec64cfcfbe
 rustc_versions=($(printf "%s\n" "${!rustc_checksum[@]}" | sort -V))
