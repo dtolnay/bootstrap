@@ -1,0 +1,15 @@
+change-id = 144675
+
+[build]
+cargo = "/build/rustc-1.89.0/build/x86_64-unknown-linux-gnu/stage1-tools-bin/cargo"
+rustc = "/build/rustc-1.89.0/build/x86_64-unknown-linux-gnu/stage1/bin/rustc"
+docs = false
+vendor = true
+extended = true
+tools = ["cargo"]
+
+[llvm]
+download-ci-llvm = false
+
+[rust]
+channel = "stable"
