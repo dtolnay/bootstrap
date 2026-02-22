@@ -1,5 +1,4 @@
-mrustc_version=0.11.0
-mrustc_commit_override=994ddf817a554c48ae03840c8aaf82fb99ab5d27
+mrustc_version=0.11.2
 declare -A rustc_checksum
 rustc_checksum[1.74.0]=882b584bc321c5dcfe77cdaa69f277906b936255ef7808fcd5c7492925cf1049
 rustc_checksum[1.75.0]=5b739f45bc9d341e2d1c570d65d2375591e22c2d23ef5b8a37711a0386abc088
