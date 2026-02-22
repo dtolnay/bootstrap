@@ -53,7 +53,7 @@ acceptable.
 ## Notes
 
 Be aware that the complete bootstrap uses a lot of disk space. Bootstrapping up
-through rustc 1.83 requires 140 GB.
+through rustc 1.93 requires 310 GB.
 
 <br>
 
