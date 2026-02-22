@@ -12,4 +12,5 @@ tools = ["cargo"]
 download-ci-llvm = false
 
 [rust]
+download-rustc = false
 channel = "stable"
