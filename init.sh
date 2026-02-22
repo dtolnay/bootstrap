@@ -41,4 +41,4 @@ sudo chmod u+w,g-w,o-w ./root
 sudo debootstrap --include=$(IFS=,; echo "${deps[*]}") trixie ./root
 
 echo 'To enter the chroot:'
-echo '$ firejail --chroot=./root --net=none --private-cwd=/build'
+echo '$ env -i firejail --chroot=./root --net=none --private-cwd=/build'

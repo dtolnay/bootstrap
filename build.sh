@@ -5,8 +5,6 @@ set -euo pipefail
 source /build/versions.sh
 
 cd "/build/mrustc-${mrustc_version}"
-unset CFG_RELEASE
-unset CFG_RELEASE_CHANNEL
 export LIBSSH2_SYS_USE_PKG_CONFIG=true
 export MRUSTC_TARGET_VER="${rustc_versions[0]%.*}"
 export PARLEVEL="$(nproc)"
