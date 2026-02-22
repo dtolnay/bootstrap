@@ -44,8 +44,9 @@ acceptable.
    bootstrap chain.
 4. Run `./init.sh` to initialize a chroot environment with the necessary
    dependencies for the bootstrap.
-5. Run `env -i firejail --chroot=./root --net=none --private-cwd=/build` to
-   enter the chroot with networking blocked.
+5. Run
+   `env -i firejail --chroot=./root --net=none --private-cwd=/build --env=TERM=$TERM`
+   to enter the chroot with networking blocked.
 6. Run `./build.sh` from inside the chroot to kick off the bootstrap.
 
 <br>
